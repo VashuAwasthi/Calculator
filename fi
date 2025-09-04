@@ -1,0 +1,79 @@
+ import java.util.*;
+class calculator {
+    public static void main() {
+        int i,check;
+        i=1;
+        double n1,n2,result=0;
+        char symbol;
+        Scanner sc=new Scanner(System.in);
+        while(true) {
+            if(i==1) {
+                System.out.println("Enter a number");
+                n1 =sc.nextDouble();
+                while(true) {
+                   System.out.println("Enter +,-,* or /");
+                   symbol=sc.next().charAt(0);
+                   if((symbol == '+')||(symbol == '-')||(symbol == '*')||(symbol == '/')) {
+                       break;
+                   }
+                   else {
+                       System.out.println("INVALID SYMBOL\nTRY AGAIN");
+                   }
+                }
+                System.out.println("Enter a number");
+                n2 =sc.nextDouble();
+                switch(symbol) {
+                    case '+': result = n1+n2;
+                    break;
+                    case '-': result = n1-n2;
+                    break;
+                    case '*': result = n1*n2;
+                    break;
+                    case '/': result = n1/n2;
+                    break;
+                }
+                System.out.println("RESULT :"+result);
+                System.out.println("Do you want to continue");
+                System.out.println("Type 1 for yes & any other number for no");
+                check=sc.nextInt();
+                if(check!=1) {
+                    System.out.println("Thanks for Using :)");
+                    break;
+                }
+            }
+            else {
+                while(true) {
+                   System.out.println("Enter +,-,* or /");
+                   symbol=sc.next().charAt(0);
+                   if((symbol == '+')||(symbol == '-')||(symbol == '*')||(symbol == '/')) {
+                       break;
+                   }
+                   else {
+                       System.out.println("INVALID SYMBOL\nTRY AGAIN");
+                   }
+                }
+                System.out.println("Enter a number");
+                n2 =sc.nextDouble();
+                switch(symbol) {
+                    case '+': result += n2;
+                    break;
+                    case '-': result -= n2;
+                    break;
+                    case '*': result *= n2;
+                    break;
+                    case '/': result /= n2;
+                    break;
+                }
+                System.out.println("RESULT :"+result);
+                System.out.println("Do you want to continue");
+                System.out.println("Type 1 for yes & any other number for no");
+                check=sc.nextInt();
+                if(check!=1) {
+                    System.out.println("Thanks for Using :)");
+                    break;
+                }
+            }
+            i++;
+        }
+    }
+}
